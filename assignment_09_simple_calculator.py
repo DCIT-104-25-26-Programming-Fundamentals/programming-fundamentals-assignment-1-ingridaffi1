@@ -68,9 +68,6 @@
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
 # =============================================================================
-# PROGRAMMING FUNDAMENTALS — Assignment 9
-# Console-Based Simple Calculator
-# =============================================================================
 
 # Functions for arithmetic operations
 def add(a, b):
