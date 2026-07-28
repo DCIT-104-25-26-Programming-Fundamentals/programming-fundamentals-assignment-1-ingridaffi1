@@ -48,4 +48,62 @@
 # =============================================================================
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
+#Function to determine fibonacci sequence
+def generate_fibonacci(n):
+    """Generates and prints the first N terms of the Fibonacci sequence."""
+    # Requirement: N must be a positive integer
+    if n <= 0:
+        print("Error: Please enter a positive integer greater than 0.")
+        return
 
+    a, b = 0, 1
+    terms = []
+
+    # Iterative loop to generate sequence
+    for _ in range(n):
+        terms.append(str(a))
+        a, b = b, a + b
+
+    print("Fibonacci sequence:", " ".join(terms))
+
+
+def is_fibonacci_number(num):
+    """Determines whether a given non-negative integer belongs to the Fibonacci sequence."""
+    if num < 0:
+        print(f"{num} is NOT a Fibonacci number.")
+        return
+
+    a, b = 0, 1
+
+    # Keep generating terms until we reach or exceed the target number
+    while a < num:
+        a, b = b, a + b
+
+    if a == num:
+        print(f"{num} is a Fibonacci number.")
+    else:
+        print(f"{num} is NOT a Fibonacci number.")
+
+
+def main():
+    # PART A
+    print("--- PART A: Generate Sequence ---")
+    try:
+        terms_input = int(input("How many terms? "))
+        generate_fibonacci(terms_input)
+    except ValueError:
+        print("Error: Invalid input. Please enter a valid integer.")
+
+    print()  # Spacer line
+
+    # PART B 
+    print("--- PART B: Check Sequence Membership ---")
+    try:
+        check_input = int(input("Enter a number to check: "))
+        is_fibonacci_number(check_input)
+    except ValueError:
+        print("Error: Invalid input. Please enter a valid integer.")
+
+
+if __name__ == "__main__":
+    main()
